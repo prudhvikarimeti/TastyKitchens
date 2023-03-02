@@ -79,8 +79,8 @@ const HeaderRoute = props => {
             <Link to="/" className="nav-link">
               <div className="header-logo-container">
                 <img
-                  src="https://res.cloudinary.com/dy8cli8om/image/upload/v1675685366/Frame_274kitchenhat_jzn8j7.png"
                   className="website-logo"
+                  src="https://res.cloudinary.com/dy8cli8om/image/upload/v1675685366/Frame_274kitchenhat_jzn8j7.png"
                   alt="website logo"
                 />
                 <p className="logo-name">Tasty Kitchens</p>
@@ -92,6 +92,7 @@ const HeaderRoute = props => {
                   Home
                 </Link>
               </li>
+
               <li className="nav-menu-item">
                 <Link to="/cart" className="nav-link">
                   Cart
@@ -111,4 +112,5 @@ const HeaderRoute = props => {
     </>
   )
 }
+
 export default withRouter(HeaderRoute)

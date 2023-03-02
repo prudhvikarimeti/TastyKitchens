@@ -90,7 +90,7 @@ class AllRestaurantSection extends Component {
   }
 
   renderRestaurantListView = () => {
-    const {activeOptionId, restaurantListItems} = this.state
+    const {restaurantListItems, activeOptionId} = this.state
 
     return (
       <>
@@ -121,7 +121,7 @@ class AllRestaurantSection extends Component {
         we are sorry, the page you requested could not be found Please go back
         to the homepage
       </p>
-      <button type="button" className="error-button">
+      <button className="error-button" type="button">
         Home Page
       </button>
     </div>
@@ -129,7 +129,7 @@ class AllRestaurantSection extends Component {
 
   renderLoadingView = () => (
     <div data-testid="restaurants-list-loader" className="loader-container">
-      <Loader type="Oval" color="#f7931e" height="50" width="50" />
+      <Loader type="Oval" color="#F7931E" height="50" width="50" />
     </div>
   )
 
@@ -179,8 +179,8 @@ class AllRestaurantSection extends Component {
             <button
               type="button"
               className="arrow-button"
-              onClick={this.leftArrowClicked}
               data-testid="pagination-left-button"
+              onClick={this.leftArrowClicked}
             >
               <AiOutlineLeftSquare size={35} style={{color: '#64748B'}} />
             </button>
@@ -190,10 +190,10 @@ class AllRestaurantSection extends Component {
             <button
               type="button"
               className="arrow-button"
-              onClick={this.rightArrowClicked}
               data-testid="pagination-right-button"
+              onClick={this.rightArrowClicked}
             >
-              <AiOutlineRightSquare size={35} style={{color: '#64748b'}} />
+              <AiOutlineRightSquare size={35} style={{color: '#64748B'}} />
             </button>
           </div>
         </div>
@@ -201,4 +201,5 @@ class AllRestaurantSection extends Component {
     )
   }
 }
+
 export default AllRestaurantSection

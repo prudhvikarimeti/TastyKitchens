@@ -1,5 +1,4 @@
 import {Link} from 'react-router-dom'
-
 import './index.css'
 
 const NotFoundRoute = () => (
@@ -21,4 +20,5 @@ const NotFoundRoute = () => (
     </Link>
   </div>
 )
+
 export default NotFoundRoute

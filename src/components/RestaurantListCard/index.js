@@ -21,12 +21,15 @@ const RestaurantListCard = props => {
         <div>
           <h1 className="name">{name}</h1>
           <p className="cuisine">{cuisine}</p>
-          <AiFillStar className="star" style={{color: `${ratingColor}`}} />
-          <p className="rating">{rating}</p>
-          <p className="total-reviews">({totalReviews}rating)</p>
+          <div className="rating-container">
+            <AiFillStar className="star" style={{color: `${ratingColor}`}} />
+            <p className="rating">{rating}</p>
+            <p className="total-reviews">({totalReviews} rating)</p>
+          </div>
         </div>
       </Link>
     </li>
   )
 }
+
 export default RestaurantListCard

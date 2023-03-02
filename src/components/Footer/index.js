@@ -18,7 +18,7 @@ const Footer = () => (
       <h1 className="heading">Tasty Kitchens</h1>
     </div>
     <p className="text">
-      The only thing we are serious about is food.Contact us on
+      The only thing we are serious about is food. Contact us on
     </p>
     <div className="social-icons-container">
       <FaPinterestSquare testid="pintrest-social-icon" className="icon" />
@@ -28,4 +28,5 @@ const Footer = () => (
     </div>
   </div>
 )
+
 export default Footer

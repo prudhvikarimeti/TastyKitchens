@@ -8,11 +8,11 @@ class LoginRoute extends Component {
   state = {
     username: '',
     password: '',
-    errorMsg: '',
     showSubmitError: false,
+    errorMsg: '',
   }
 
-  onChangeUserName = event => {
+  onChangeUsername = event => {
     this.setState({username: event.target.value})
   }
 
@@ -48,7 +48,7 @@ class LoginRoute extends Component {
     if (response.ok === true) {
       this.onSubmitSuccess(data.jwt_token)
     } else {
-      this.onSubmitFailure(data.errorMsg)
+      this.onSubmitFailure(data.error_msg)
     }
   }
 
@@ -56,7 +56,7 @@ class LoginRoute extends Component {
     const {password} = this.state
     return (
       <>
-        <label htmlFor="password" className="input-label">
+        <label className="input-label" htmlFor="password">
           PASSWORD
         </label>
         <input
@@ -71,11 +71,11 @@ class LoginRoute extends Component {
     )
   }
 
-  renderUserNameField = () => {
+  renderUsernameField = () => {
     const {username} = this.state
     return (
       <>
-        <label htmlFor="username" className="input-label">
+        <label className="input-label" htmlFor="username">
           USERNAME
         </label>
         <input
@@ -83,7 +83,7 @@ class LoginRoute extends Component {
           id="username"
           className="username-input-field"
           value={username}
-          onChange={this.onChangeUserName}
+          onChange={this.onChangeUsername}
           placeholder="Username"
         />
       </>
@@ -91,7 +91,7 @@ class LoginRoute extends Component {
   }
 
   render() {
-    const {errorMsg, showSubmitError} = this.state
+    const {showSubmitError, errorMsg} = this.state
     const jwtToken = Cookies.get('jwt_token')
     if (jwtToken !== undefined) {
       return <Redirect to="/" />
@@ -106,6 +106,7 @@ class LoginRoute extends Component {
             alt="website login"
           />
         </div>
+
         <form className="form-container" onSubmit={this.submitForm}>
           <img
             src="https://res.cloudinary.com/dy8cli8om/image/upload/v1675685366/Frame_274kitchenhat_jzn8j7.png"
@@ -114,7 +115,7 @@ class LoginRoute extends Component {
           />
           <h1 className="tasty-text">Tasty Kitchens</h1>
           <h1 className="login-text">Login</h1>
-          <div className="input-container">{this.renderUserNameField()}</div>
+          <div className="input-container">{this.renderUsernameField()}</div>
           <div className="input-container">{this.renderPasswordField()}</div>
           {showSubmitError && <p className="error-message">{errorMsg}</p>}
           <button type="submit" className="login-button">
@@ -130,4 +131,5 @@ class LoginRoute extends Component {
     )
   }
 }
+
 export default LoginRoute
